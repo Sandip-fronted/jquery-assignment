@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../jquery/jquery-3.7.1.min.js"></script>
+    <style>
+        .important {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.blue {
+  color: blue;
+}
+.animate{
+    width: 100px;
+    height: 100px;
+    background-color: crimson;
+    border: 1px solid black;
+    position: absolute;
+}
+#panel{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    border: 1px solid black;
+    position: absolute;
+}
+.paragraph{
+  background-color: crimson;
+}
+    </style>
+</head>
+<body>
+    <h2>(1) What is jQuery?  </h2>
+    <p>ANS ->jQuery is a lightweight, "write less, do more", JavaScript library. The purpose of jQuery is to make it much easier to use JavaScript on your website.</p>
+    <hr>
+    <h2>(2) How to Apply CSS Using JQuery, How to Add Class and Remove Class in
+        Jquery, JQuery Animation?</h2>
+    <p>ANS ->css Syntax: $('selector').css('propertyname', 'value');<br>
+    add class: </p>
+
+    <h1>Heading 1</h1>
+<h2>Heading 2</h2>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<div>This is some important text!</div><br>
+
+<button class="add">Add classes to elements</button>
+<button class="remove">Remove classes to elements</button>
+<button class="animation">Start Animation</button>
+<br>
+<br>
+<div class="animate">
+</div><br><br><br><br><br><br><br><hr>
+<h2>(3) How to create slider with animation?
+</h2>
+<p>ANS -> Syntax: $(selector).slideDown(speed,callback);</p>
+<br><br>
+
+<button class="p1">What is Netflix?<i class="fa-regular fa-plus" id="i1" ></i></button><br>
+        <div class="paragraph" id="p1">
+            Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.<br><br>
+
+            You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!
+        </div>
+
+<script>
+    $(document).ready(function(){
+      $(".add").click(function(){
+        $("h1, h2, p").addClass("blue");
+        $("div").addClass("important");
+      });
+      $(".remove").click(function(){
+        $("h1, h2, p").removeClass("blue");
+        $("div").removeClass("important");
+      });
+      $(".animation").click(function(){
+    $(".animate").animate({left: '250px'});
+  });
+  $("#flip").click(function(){
+    $("#panel").slideDown("slow");
+  });
+  $('.paragraph').hide()
+
+            $(".p1").click(function () {
+                $("#p1").slideToggle()
+                $("#i1").css("transform","rotate(45deg)")
+            });
+    });
+  
+    </script>
+</body>
+</html>
